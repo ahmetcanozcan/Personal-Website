@@ -1,0 +1,60 @@
+.bio-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 60% auto;
+
+  .text{
+    z-index: 5;
+    position: relative;
+    left: 5rem;
+    text-shadow: 5px 5px rgba(0, 0, 0, 0.61);
+    padding-top: 55vh;
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+
+    justify-content: center;
+  }
+  .image{
+    z-index: 0;
+    position: relative;
+    right: 5rem;
+    opacity: .7;
+
+    img {
+      box-shadow: 0px 0px 10px 1px red;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+}
+
+
+@media (max-width:1000px) {
+  .bio-grid {
+    display: block;
+  
+    .text{
+      left:0;
+      text-shadow: 2px 2px rgba(0, 0, 0, 0.61);
+      padding-top: 40vh;
+      font-size: 1.7rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+  
+    }
+    .image{
+      position: relative;
+      right: 0;
+      opacity: .7;
+  
+      img {
+        box-shadow: 0px 0px 10px 1px red;
+        width: 100%;
+        height: auto;
+      }
+    }
+  
+  }
+}

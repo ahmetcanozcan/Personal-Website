@@ -1,0 +1,120 @@
+.contact-grid  {
+  display: grid;
+  position: relative;
+  grid-template-columns: 30% auto;
+
+  .contact-info {
+    .wrapper {
+
+      border-radius: 15px;
+      height: 100%;
+    display: flex;
+    justify-content: center;
+      padding-top: 25%;
+    .contact-info-content{
+      margin: 2rem 0;
+      .title{
+        opacity: .4;
+      }
+    }
+  
+  }
+  }
+}
+
+
+#contact-form {
+  
+  padding: 2rem;
+  input,textarea {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    font-size: 1.3rem;
+    outline: none;
+  }
+
+  button.send{
+    background-color: darken($celadon-blue,20%);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 300ms;
+    padding: 1rem 4rem ;
+    font-weight: 600;
+    letter-spacing: 2px;
+    &:hover {
+      background-color:  $celadon-blue;
+    }
+  }
+
+  .wrapper > * {
+    padding: .7rem 1rem;
+    margin: .7rem;
+  }
+
+ 
+
+
+}
+
+
+@media (max-width:1000px) {
+  .contact-grid  {
+    display: block;
+  
+    .contact-info {
+      .wrapper {
+        text-align: center;
+        padding-top:0;
+      .contact-info-content{
+        margin: 1rem 0;
+        .title{
+          margin-bottom: 4px;
+          opacity: .4;
+        }
+      }
+    
+    }
+    }
+  }
+  
+  
+  #contact-form {
+    
+    padding: 2rem;
+    input,textarea {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid gray;
+      font-size: 1.3rem;
+      outline: none;
+    }
+  
+    button.send{
+      background-color: darken($celadon-blue,20%);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 300ms;
+      padding: 1rem 4rem ;
+      font-weight: 600;
+      letter-spacing: 2px;
+      &:hover {
+        background-color:  $celadon-blue;
+      }
+    }
+  
+    .wrapper > * {
+      padding: .7rem 1rem;
+      margin: .7rem;
+    }
+  
+   
+  
+  
+  }
+  
+}

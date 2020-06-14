@@ -4,7 +4,7 @@ const path = require("path");
 // Plugins
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   mode: process.env.NODE_ENV == "PRODUCTION" ? "production" : "development",
   entry: "./src/main.js",
@@ -12,6 +12,14 @@ module.exports = {
     // Create index.html in dist directory
     new HtmlWebpackPlugin({
       template: "src/index.html",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{
+        from: path.resolve(__dirname, "assets"), to: "assets"
+      }]
+    }),
+    new webpack.DefinePlugin({
+      "process.env.ASSET_PATH": "./src/assets"
     }),
     // Cleans dist directory before building
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false })
@@ -39,7 +47,12 @@ module.exports = {
           'sass-loader',
         ],
       },
-
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader',
+        ],
+      },
     ],
   },
   // Set Dev-Server configurations

@@ -1,6 +1,18 @@
 import "./style/main.scss";
+import "./animations/parallax";
+import "./animations/header-typed";
+import "./animations/menu-animations";
+import "./animations/goto-animations";
+import "./animations/scroll-reveal";
 
-import component from "./component"
+
+import rellax from "rellax";
+import mailSender from "./mail-sender";
+
+// initialize rellax effects
+rellax(".rellax");
 
 
-document.body.appendChild(component());
+mailSender(succes => console.log(succes));
+
+

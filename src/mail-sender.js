@@ -24,6 +24,7 @@ const sendingHTML = `<img style="width:1rem; transform: scale(1.4)" src="/assets
 const defaultHTML = sendButton.innerHTML;
 
 function setSending(value) {
+  clean();
   if (value) {
     sendButton.disabled = true;
     sendButton.innerHTML = sendingHTML;
@@ -44,7 +45,6 @@ const URL = "https://us-central1-ahmetcanozcan-github-io.cloudfunctions.net/send
 function create(cb) {
   sendButton.onclick = function () {
     setSending(true);
-    clean();
 
     fetch(URL, {
       method: "POST",
